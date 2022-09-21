@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Taco Cloud</title>
+</head>
+<body>
+<h1>Login</h1>
+<img th:src="@{/images/taco.jpg}" alt="">
+<div th:if="${error}">
+    Unable to login. Check your username and password.
+</div>
+<p>
+    New here? Click <a th:href="@{/register}">here</a> to register.
+</p>
+
+<form method="post" th:action="@{/login}" id="loginForm">
+    <label for="username">Username:</label>
+    <input type="text" name="username">
+
+    <label for="password">Password:</label>
+    <input type="password" name="password">
+
+    <input type="submit" value="Login">
+</form>
+<br>
+<a th:href="@{/oauth2/authorization/google}">Sign in with Google</a>
+</body>
+</html>
